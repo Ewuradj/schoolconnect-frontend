@@ -1,0 +1,53 @@
+/* Example CSS for the navbar */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    background-color: #000A29 !important;
+    
+   
+    
+    height: 60px; 
+  }
+  
+  .navbar-logo img {
+    height: 150%;
+  }
+  
+  .navbar-items {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    transition: transform 0.2s ease-in-out;
+    
+  }
+  
+  .navbar-item a {
+    text-decoration: none;
+    color: #E1EFE6;
+    transition: color 0.3s;
+  }
+  .navbar-item.active a {
+    color: #ff0000; /* Active color */
+  }
+  
+  /* Media query for responsive design */
+  @media (max-width: 768px) {
+    .navbar {
+      flex-direction: column;
+    }
+    
+    .navbar-items {
+      margin-top: 1rem;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  .navbar-item a:hover {
+    color: #ddd;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }

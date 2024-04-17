@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import './SignUp-page.css';
-const UserRegistration = () => {
+import Navbar from '../../components/navbar/navbar';
+
+const SignupPage = () => {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
@@ -10,20 +12,44 @@ const UserRegistration = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Perform validation and registration logic here
-    // You will need to implement the backend logic for registration and email confirmation
+    // Perform form validation
+    if (!firstName.trim()) {
+      setError('First Name is required');
+      return;
+    }
 
-    // Reset form fields
+    if (!lastName.trim()) {
+      setError('Last Name is required');
+      return;
+    }
+
+    if (!email.trim()) {
+      setError('Email is required');
+      return;
+    }
+
+    if (!password.trim()) {
+      setError('Password is required');
+      return;
+    }
+
+    // Perform registration logic and backend integration here
+    // ...
+
+    // Reset form fields and error message
     setFirstName('');
     setLastName('');
     setEmail('');
     setPassword('');
+    setError('');
   };
 
   return (
+    <>
+    <Navbar/>
     <div className="container">
       <form className="registration-form" onSubmit={handleSubmit}>
-        <h2 className='h1'>USER REGISTRATION </h2>
+        <h2 className="h1">USER REGISTRATION </h2>
         {error && <p className="error-message">{error}</p>}
         <div className="form-group">
           <label htmlFor="firstName">First Name</label>
@@ -39,7 +65,7 @@ const UserRegistration = () => {
           <input
             type="text"
             id="lastName"
-            value= {lastName}
+            value={lastName}
             onChange={(e) => setLastName(e.target.value)}
           />
         </div>
@@ -62,23 +88,32 @@ const UserRegistration = () => {
           />
         </div>
         <div className="form-group">
-          <p>By proceeding, you acknowledge and agree to our  <a href="Privacy Policy"> Privacy Policy</a>  and  <a href="Terms of Use"></a> Terms of Use.</p>
+          <p>
+            By proceeding, you acknowledge and agree to our{' '}
+            <a href="Privacy Policy">Privacy Policy</a> and{' '}
+            <a href="Terms of Use">Terms of Use</a>.
+          </p>
         </div>
         <div className="form-group">
           <button type="submit">Sign Up</button>
         </div>
         {/* <div className="form-group">
           <p>Or sign up with:</p>
-          <button type="button">Google</button> <br/> <br/>
-          <button type="button">Facebook</button><br/> <br/>
-          <button type="button">Apple</button><br/> <br/>
+          <button type="button">Google</button> <br /> <br />
+          <button type="button">Facebook</button>
+          <br /> <br />
+          <button type="button">Apple</button>
+          <br /> <br />
         </div> */}
         <div className="form-group">
-          <p>Already have an account? <a href="#">Log in</a></p>
+          <p>
+            Already have an account? <a href="#">Log in</a>
+          </p>
         </div>
       </form>
     </div>
+    </>
   );
 };
 
-export default UserRegistration;
+export default SignupPage;

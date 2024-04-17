@@ -1,0 +1,100 @@
+.school-list {
+    margin-top: 40px;
+  }
+  
+  .section-title {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .school-list-items {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .school-item {
+    width: 300px;
+    margin: 10px;
+    background-color: #f1f1f1;
+    padding: 20px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .school-item-image {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin-bottom: 10px;
+  }
+  
+  .school-item-details {
+    text-align: center;
+  }
+  
+  .school-item-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+  
+  .school-item-location,
+  .school-item-type,
+  .school-item-primary,
+  .school-item-description,
+  .school-item-students {
+    font-size: 14px;
+    margin-bottom: 6px;
+  }
+  
+  .school-item-reviews {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+  
+  .star-rating {
+    /* Add styles for star rating display */
+  }
+  
+  .review-count {
+    margin-left: 6px;
+  }
+  
+  .add-to-list-button {
+    display: block;
+    margin: 0 auto;
+    padding: 8px 16px;
+    background-color: #333333;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  .leave-review-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  .button-container {
+    
+        display: flex;
+        justify-content: space-between;
+     
+  }
+  
+  .add-to-list-button,
+  .leave-review-button {
+    display: inline-block;
+    vertical-align: middle;
+    /* Add any additional styling as needed */
+  }

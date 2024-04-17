@@ -1,11 +1,15 @@
 import React from 'react'
-import './LoginPage.css';
+import './AdminLogin.css';
+import { Link } from 'react-router-dom';
+import Navbar from '../../components/navbar/navbar';
 
-const LoginPage = () => {
+const AdminLogin= () => {
     return (
+        <>
+        <Navbar/>
         <div className='containers'>
             <div class="login-form">
-                <h2>USER LOGIN</h2>
+                <h2>ADMIN LOGIN</h2>
                 <div id="error-message" class="error-message"></div>
                 <div class="form-group">
                     <label for="username">Username:</label>
@@ -19,12 +23,15 @@ const LoginPage = () => {
                     <label for="password">Password:</label>
                     <input type="password" id="password" />
                 </div>
+                <Link to='/admindashboard'>
                 <button id="login-btn">Login</button>
+                </Link>
                 <p> <a href="/forgot-password">Forgot Password?</a></p><p> or Don't have an account? <a href="/signup">Sign Up</a></p>
                 
             </div>
         </div>
+        </>
     )
 }
 
-export default LoginPage
+export default AdminLogin
